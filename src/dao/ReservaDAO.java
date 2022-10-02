@@ -32,7 +32,7 @@ public class ReservaDAO {
 		
 			try(statement){	
 				statement.setDate(1, reserva.getDataEntrada());		
-				statement.setDate(2, reserva.getDataEntrada());
+				statement.setDate(2, reserva.getDataSalida());
 				statement.setString(3, reserva.getValor());
 				statement.setString(4, reserva.getFormaPago());
 					
@@ -44,7 +44,7 @@ public class ReservaDAO {
 					while(resultSet.next()) {
 						reserva.setId(resultSet.getInt(1));
 						System.out.println(String.format(
-										"Fue guardado el reserva %s",
+										"Fue guardado la reserva %s",
 										reserva));	
 					}
 				}

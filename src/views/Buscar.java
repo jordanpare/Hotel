@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -428,8 +429,9 @@ public class Buscar extends JFrame {
 						.ifPresentOrElse(fila -> {
 							Integer id = Integer.valueOf(modelo.getValueAt(tbReservas.getSelectedRow(), 0).toString());
 							reservaController.eliminar(id);
-
-							Exito.main(null);
+							
+							MsjEliminar.main(null);
+							
 						}, () -> JOptionPane.showMessageDialog(this, "Por favor, elije un item"));
 			}
 			if (noTieneFilaElegidaReservas()) {
@@ -438,7 +440,7 @@ public class Buscar extends JFrame {
 							Integer id = Integer.valueOf(modeloHospedes.getValueAt(tbHospedes.getSelectedRow(), 0).toString());
 							huespedController.eliminar(id);
 
-							Exito.main(null);
+							MsjEliminar.main(null);
 						}, () -> JOptionPane.showMessageDialog(this, "Por favor, elije un item"));
 			}
 		}

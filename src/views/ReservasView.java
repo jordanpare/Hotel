@@ -322,6 +322,7 @@ public class ReservasView extends JFrame {
 					limpiar();
 					RegistroHospede registro = new RegistroHospede(reservaId);
 					registro.setVisible(true);
+					dispose();
 				} else {
 					JOptionPane.showMessageDialog(null, "Deve llenar todos los campos.");
 				}
@@ -329,7 +330,7 @@ public class ReservasView extends JFrame {
 		});
 		
 		
-		JPanel btnsiguiente = new JPanel();
+/*		JPanel btnsiguiente = new JPanel();
 		btnsiguiente.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -344,13 +345,14 @@ public class ReservasView extends JFrame {
 					RegistroHospede registro = new RegistroHospede(reservaId);
 					registro.setVisible(true);
 					System.out.println(reservaId);
+					dispose();
 					
 				} else {
 					JOptionPane.showMessageDialog(null, "Debes llenar todos los campos.");
 				}
 			}
 
-		});
+		});*/
 		
 		
 		btnProximo.setLayout(null);

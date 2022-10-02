@@ -1,6 +1,8 @@
 package views;
 
 import java.awt.EventQueue;
+
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -8,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -28,6 +31,7 @@ public class MenuUsuario extends JFrame {
 	int xMouse, yMouse;
 	private JLabel labelExit;
 	private JLabel labelRegistro;
+	
 
 	/**
 	 * Launch the application.
@@ -79,9 +83,9 @@ public class MenuUsuario extends JFrame {
 		panelMenu.setBackground(new Color(12, 138, 199));
 		panelMenu.setBounds(0, 0, 257, 609);
 		contentPane.add(panelMenu);
-		panelMenu.setLayout(null);
 		
 		JPanel btnBuscar = new JPanel();
+		btnBuscar.setBounds(0, 312, 257, 56);
 		btnBuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -98,8 +102,7 @@ public class MenuUsuario extends JFrame {
 				dispose();
 			}
 		});
-		
-		btnBuscar.setBounds(0, 312, 257, 56);
+		panelMenu.setLayout(null);
 		btnBuscar.setBackground(new Color(12, 138, 199));
 		btnBuscar.setLayout(null);
 		btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -119,6 +122,7 @@ public class MenuUsuario extends JFrame {
 		logo.setIcon(new ImageIcon(MenuUsuario.class.getResource("/imagenes/aH-150px.png")));
 		
 		JPanel btnRegistro = new JPanel();
+		btnRegistro.setBounds(0, 255, 257, 56);
 		btnRegistro.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -135,7 +139,6 @@ public class MenuUsuario extends JFrame {
 				dispose();
 			}
 		});
-		btnRegistro.setBounds(0, 255, 257, 56);
 		btnRegistro.setBackground(new Color(12, 138, 199));
 		panelMenu.add(btnRegistro);
 		btnRegistro.setLayout(null);
@@ -147,11 +150,49 @@ public class MenuUsuario extends JFrame {
 		labelRegistro.setBounds(25, 11, 205, 34);
 		labelRegistro.setFont(new Font("Roboto", Font.PLAIN, 18));
 		labelRegistro.setHorizontalAlignment(SwingConstants.LEFT);
-		btnRegistro.add(labelRegistro);
+		btnRegistro.add(labelRegistro);		
+		
+//SALIR
+		
+		JButton btnNewButton = new JButton("SALIR ");
+		btnNewButton.setBorder(null);
+		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
+		btnNewButton.setIcon(new ImageIcon(MenuUsuario.class.getResource("/imagenes/salir3.png")));
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnNewButton.setBackground(new Color(118, 187, 223));				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnNewButton.setBackground(new Color(12, 138, 199));	
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Salir.main(null);
+			}
+		});
+		btnNewButton.setBackground(new Color(12, 138, 199));
+		btnNewButton.setForeground(SystemColor.text);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setBounds(0, 495, 257, 56);
+		panelMenu.add(btnNewButton);
+		
+		panelMenu.add(btnNewButton);
+		btnNewButton.setLayout(null);
+		btnNewButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		
+		
+//fin salida		
+		
+//exit X
+		
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(26, 219, 201, 2);
-		panelMenu.add(separator);
+		panelMenu.add(separator);	
 		header.setLayout(null);
 		header.setBackground(Color.WHITE);
 		header.setBounds(0, 0, 944, 36);
@@ -159,6 +200,7 @@ public class MenuUsuario extends JFrame {
 		
 		JPanel btnexit = new JPanel();
 		btnexit.addMouseListener(new MouseAdapter() {
+
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.exit(0);
@@ -185,6 +227,7 @@ public class MenuUsuario extends JFrame {
 		btnexit.add(labelExit);
 		labelExit.setHorizontalAlignment(SwingConstants.CENTER);
 		labelExit.setFont(new Font("Roboto", Font.PLAIN, 18));
+//fin exit
 		
 	    JPanel panelFecha = new JPanel();
 	    panelFecha.setBackground(new Color(118, 187, 223));
@@ -235,10 +278,12 @@ public class MenuUsuario extends JFrame {
 	    labelDescricao_3.setBounds(312, 482, 355, 27);
 	    contentPane.add(labelDescricao_3);
 	    
-	    JLabel labelDescricao_4 = new JLabel("- Excluir todos los tipos de registros");
+	    JLabel labelDescricao_4 = new JLabel("- Eliminar todo los tipos de registros");
 	    labelDescricao_4.setFont(new Font("Roboto", Font.PLAIN, 17));
 	    labelDescricao_4.setBounds(312, 520, 295, 27);
 	    contentPane.add(labelDescricao_4);
+	        
+	    
 	}
 	
 	//Código que permite movimentar a janela pela tela seguindo a posição de "x" e "y"

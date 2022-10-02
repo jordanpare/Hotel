@@ -29,6 +29,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Date;
 import java.text.Format;
+import java.util.concurrent.TimeUnit;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import javax.swing.SwingConstants;
@@ -309,26 +310,26 @@ public class RegistroHospede extends JFrame {
 				
 				huespedController.salvar(huesped, reservaIdInt);
 				
-				RegistroHospede registro = new RegistroHospede(reservaId);
-				registro.setVisible(true);
+				//RegistroHospede registro = new RegistroHospede(reservaId);
+				//registro.setVisible(true);
 				limpiar();
 				Exito.main(null);
-				dispose();
+				dispose();	
+				/*try {
+					
+					MenuUsuario menu = new MenuUsuario();
+		            menu.setVisible(true);
+		            TimeUnit.SECONDS.sleep(3);
+		            dispose();	
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}*/
+				
 			}
 			
 		});
 		
 		
-/*	
-		JPanel btnsalvar = new JPanel();
-		btnsalvar.setBounds(723, 560, 122, 35);
-		btnsalvar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			}
-		});
-*/
 	
 		btnsalvar.setLayout(null);
 		btnsalvar.setBackground(new Color(12, 138, 199));
@@ -359,7 +360,7 @@ public class RegistroHospede extends JFrame {
 		logo.setIcon(new ImageIcon(RegistroHospede.class.getResource("/imagenes/Ha-100px.png")));
 	}
 	
-	//para cerrar ventana
+	//otra op para cerrar ventana
 	
 /*	public class WindowClosingExample{
 		public WindowClosingExample() {
