@@ -69,7 +69,7 @@ public class ReservaDAO {
 						while (resultSet.next()) {
 							Reserva fila = new Reserva(resultSet.getInt("ID"),
 									resultSet.getDate("DATAENTRADA"),
-									resultSet.getDate("DATAENTRADA"),
+									resultSet.getDate("DATASALIDA"),
 									resultSet.getString("VALOR"),
 									resultSet.getString("FORMAPAGO"));
 							resultado.add(fila);

@@ -312,18 +312,10 @@ public class RegistroHospede extends JFrame {
 				
 				//RegistroHospede registro = new RegistroHospede(reservaId);
 				//registro.setVisible(true);
+				
 				limpiar();
 				Exito.main(null);
 				dispose();	
-				/*try {
-					
-					MenuUsuario menu = new MenuUsuario();
-		            menu.setVisible(true);
-		            TimeUnit.SECONDS.sleep(3);
-		            dispose();	
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}*/
 				
 			}
 			
